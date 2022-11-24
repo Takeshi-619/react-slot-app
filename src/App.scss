@@ -1,0 +1,208 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.App {
+  text-align: center;
+  position: relative;
+}
+
+.gogo {
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  border: 8px solid red;
+  border-radius: 12px;
+  height: 17%;
+  width: 10%;
+  left: 100px;
+  top: 435px;
+}
+
+.gogo img {
+  width: 90%;
+  height: auto;
+  position: absolute;
+  top: 6%;
+  left: 5%;
+}
+
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+//コンポーネント
+$reel-width: 80%;
+$reel-height: 95%;
+$reel-bgc: #ffffff;
+$m-c: 0 auto;
+$reelLi: none;
+
+.reelP {
+  height: 100%;
+
+  ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 30px;
+    list-style: $reelLi;
+  }
+}
+
+.contentMachine {
+  background-image: url(../public/img/backGroundImg@2x.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: left top;
+  height: 850px;
+  background-color: #a4b0c0;
+
+  .bigChance img {
+    width: 24%;
+  }
+
+  .luckyNumber img {
+    width: 50%;
+    margin-top: -3%;
+  }
+
+  .slotReel {
+    height: 45%;
+    width: 60%;
+    margin: $m-c;
+    border: 10px solid #feef02;
+    border-radius: 12px;
+    background-color: #000000;
+    margin-top: -1.5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "lr cr rr";
+
+    .leftReel {
+      grid-area: lr;
+      width: $reel-width;
+      height: $reel-height;
+      background-color: $reel-bgc;
+      margin: auto;
+    }
+
+    .centerReel {
+      grid-area: cr;
+      width: $reel-width;
+      height: $reel-height;
+      background-color: $reel-bgc;
+      margin: auto;
+    }
+
+    .rigthReel {
+      grid-area: rr;
+      width: $reel-width;
+      height: $reel-height;
+      background-color: $reel-bgc;
+      margin: auto;
+    }
+  }
+
+  .credit {
+    margin: 0 auto;
+    border: 4px solid red;
+    background-color: #000000;
+    width: 3%;
+    height: 3%;
+  }
+
+  .pushBtn {
+    position: relative;
+
+    .lvr {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background-color: #000000;
+      position: absolute;
+      top: 22%;
+      left: 5%;
+    }
+
+    .btnCover {
+      background-image: url(../public/img/pushBtnCover.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      height: 180px;
+      width: 62%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+
+      .rightBtn,
+      .leftBtn,
+      .centerBtn {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        border: 5px solid #a4b0c0;
+        border-radius: 50%;
+        margin-top: 4%;
+      }
+
+      .rightBtn:hover,
+      .leftBtn:hover,
+      .centerBtn:hover {
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        border: 5px solid #a4b0c0;
+        border-radius: 50%;
+        margin-top: 4%;
+      }
+    }
+  }
+}
+
+.active {
+  background-color: blue !important;
+}
+
+.numbersImgs {
+  z-index: -99;
+  width: 100%;
+  height: 70px;
+}
